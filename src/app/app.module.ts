@@ -12,6 +12,7 @@ import { ProduitComponent } from './produit/produit.component';
 import { NvProduitComponent } from './nv-produit/nv-produit.component';
 import { ProduitService } from './services/produit.service';
 import { ModifierComponent } from './modifier/modifier.component';
+import {ContactService} from './services/contact.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ModifierComponent } from './modifier/modifier.component';
     HttpClientModule
 
   ],
-  providers: [ProduitService],
+  providers: [ProduitService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
