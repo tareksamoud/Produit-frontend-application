@@ -23,8 +23,8 @@ export class ProduitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onGetProduitsByDesignation(form:any){
-    this.motCleCourant=form.motCle;
+  onGetProduitsByDesignation(mc:any){
+    this.motCleCourant=mc.motCle;
     this.currentPage=0;
     this.chercherParDesignation();
   }
