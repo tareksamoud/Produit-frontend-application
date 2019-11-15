@@ -1,0 +1,12 @@
+.motCle-input{
+    margin:0 10px;
+    padding:5px 10px;
+    width:40%;
+    border-radius: 20px;
+}
+
+.pagination-menu{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

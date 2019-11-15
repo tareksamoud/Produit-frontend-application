@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Angular testing</div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item">{{info.firstname}}</li>
+        <li class="list-group-item">{{info.lastname}}</li>
+        <li class="list-group-item">{{info.email}}</li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Commentaire : </label>
+      <input type="text" placeholder="Ajouter un commentaire..." class="control-label" [(ngModel)]="commentaire.message">
+      <button class="btn btn-primary" (click)="onAjoutMessage()" [disabled]="msgStatus">Ajouter</button>
+    </div>
+
+    <div *ngIf="commentaires.length>0; else
+      pasCommentaire">
+      <ul *ngFor='let c of commentaires' class="form-group">
+        <li class="list-group-item">{{c.message}}<span class="badge">{{c.date|date:'dd/MM/yyyy HH:mm:ss'}}</span></li>
+
+      </ul>
+    </div>
+    <ng-template #pasCommentaire>
+      <h3>Pas de commentaire pour le moment</h3>
+    </ng-template>
+  </div>
+</div>

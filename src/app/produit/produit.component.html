@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Liste des produits</div>
+    <div class="panel-body">
+      <form #form="ngForm" (ngSubmit)="onGetProduitsByDesignation(form.value)">
+        <label for="mc" class="control-label">Mot Clé : </label>
+        <input type="text" name="motCle" id="mc" ngModel placeholder="chercher par mot clé..." class="motCle-input"/>
+        <button class="btn btn-info" type="submit">
+          <span class="glyphicon glyphicon-search" aria-hidden="true">&nbsp;</span>
+          Chercher
+        </button>
+      </form>
+
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped" *ngIf="listProduits">
+        <thead>
+          <tr>
+            <th>Id</th><th>Description</th><th>Prix</th><th>Quantité</th><th>Suppression</th><th>Editer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of listProduits['_embedded'].produits">
+            <td>{{p.id}}</td>
+            <td>{{p.designation}}</td>
+            <td>{{p.prix}}</td>
+            <td>{{p.quantite}}</td>
+            <td class="btn btn-warning" (click)="onClickSupprimer(p)">Supprimer</td>
+            <td class="btn btn-info" (click)="onClickModifier(p)">Modifier</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="pagination pagination-sm pagination-menu" *ngIf="pages">
+      <li [ngClass]="i==currentPage?'active': ''" *ngFor="let page of pages; let i=index">
+        <a (click)="onChangeIndex(i)">{{i}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
