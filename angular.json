@@ -99,15 +99,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "eslintConfig": ".eslintrc.json",
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },
@@ -125,5 +122,8 @@
         }
       }
     }},
-  "defaultProject": "angular-testing"
+  "defaultProject": "angular-testing",
+  "cli": {
+    "analytics": "89a16573-4a3f-4b44-88b2-a87a6085c7f7"
+  }
 }
