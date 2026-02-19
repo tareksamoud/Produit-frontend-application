@@ -5,6 +5,7 @@ import { Produit } from '../models/produit.model';
 
 @Component({
   selector: 'app-modifier',
+  standalone: false,
   templateUrl: './modifier.component.html',
   styleUrls: ['./modifier.component.css']
 })
