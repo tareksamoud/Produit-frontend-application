@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact',
+  standalone: false,
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })

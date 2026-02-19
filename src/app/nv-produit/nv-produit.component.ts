@@ -6,6 +6,7 @@ import { ProduitService } from '../services/produit.service';
 
 @Component({
   selector: 'app-nv-produit',
+  standalone: false,
   templateUrl: './nv-produit.component.html',
   styleUrls: ['./nv-produit.component.css']
 })
